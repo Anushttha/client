@@ -1,0 +1,72 @@
+.landing{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto; /* This maintains the image's aspect ratio */
+      display: block; /* Removes extra space below the image */
+    }
+
+    
+    .sliderContainer{
+      position: absolute;
+      top: calc(100vh - 350px);
+    }
+    
+    .slider{
+      position: relative;
+      white-space: nowrap;
+      margin: 100px;
+    }
+    
+    .slider p{
+      position: relative;
+      margin: 0px;
+      color: white;
+      font-size: 170px;
+      font-weight: 500;
+      padding-right: 50px;
+      
+      
+      
+    }
+    
+    .slider p:nth-of-type(2){
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+  
+    .description{
+      position: absolute;
+      top: 25%;
+      left: 78%;
+      color: white;
+      font-size: 24px;
+      font-weight: 300;
+      p{
+        margin: 0px;
+        margin-bottom: 10px;
+      }
+      svg{
+        transform: scale(2);
+        margin-bottom: 100px;
+      }
+    }
+    .cursor {
+      background-color: black;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    
+  }
+  
+ 
