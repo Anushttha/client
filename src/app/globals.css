@@ -1,25 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body{
-    margin: 0px;
-    overflow: hidden; /* Hide scrollbars */
-    cursor: wait;
+body {
+  margin: 0px;
+  overflow: hidden; /* Hide scrollbars */
+  cursor: wait;
 }
 
 /* CustomCursor.module.css */
 
 .cursor {
-    background-color: black;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 1;
-   
-   
-  }
- 
-  
+  background-color: black;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1;
+}

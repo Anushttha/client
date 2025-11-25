@@ -1,4 +1,4 @@
-.header{
+.header {
     position: absolute;
     display: flex;
     z-index: 1;
@@ -10,70 +10,79 @@
     font-weight: 500;
     box-sizing: border-box;
     align-items: center;
-    
-    
-    .logo{
+
+    .logo {
         display: flex;
         cursor: pointer;
-        p{
+        z-index: 10; /* Ensure logo is clickable */
+        
+        p {
             margin: 0px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
         }
-        .name{
+
+        .name {
             display: flex;
             position: relative;
             overflow: hidden;
             white-space: nowrap;
             margin-left: 5px;
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-            p{
+
+            p {
                 position: relative;
                 transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-                &:nth-of-type(2){
+
+                &:nth-of-type(2) {
                     padding-left: 0.3em;
                 }
-                &:nth-of-type(3){
+
+                &:nth-of-type(3) {
                     position: absolute;
                     left: 120px;
                     padding-left: 0.3em;
                 }
             }
         }
-        &:hover{
-            .copyright{
+
+        &:hover {
+            .copyright {
                 transform: rotate(360deg);
             }
-            .name{
+
+            .name {
                 padding-right: 30px;
-                .codeBy{
+
+                .codeBy {
                     transform: translateX(-100%);
                 }
-                .dennis{
+
+                .dennis {
                     transform: translateX(-65px);
                 }
-                
             }
         }
     }
-    .nav{
+
+    .nav {
         display: flex;
         align-items: center;
 
-        .el{
-           
+        .el {
             display: flex;
             flex-direction: column;
             position: relative;
             z-index: 1;
             padding: 15px;
             cursor: pointer;
-           
-            &:hover{
-                .indicator{
+
+            &:hover {
+                .indicator {
                     transform: scale(1);
                 }
             }
-            .indicator{
+
+            .indicator {
                 position: absolute;
                 width: 5px;
                 height: 5px;
@@ -85,20 +94,22 @@
                 transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
             }
         }
-        a{
+
+        a {
             cursor: pointer;
             text-decoration: none;
             color: white;
         }
-    } 
+    }
 }
-.headerButtonContainer{
+
+.headerButtonContainer {
     transform: scale(0);
     position: fixed;
     right: 0px;
-    z-index: 4;
+    z-index: 20; /* Higher than header to ensure clickable */
 
-    .button{
+    .button {
         position: relative;
         margin: 20px;
         width: 80px;
@@ -110,12 +121,14 @@
         align-items: center;
         justify-content: center;
     }
-    
-    .burger{
+
+    .burger {
         width: 100%;
         position: relative;
         z-index: 1;
-        &::after, &::before{
+
+        &::after,
+        &::before {
             content: "";
             display: block;
             height: 1px;
@@ -125,28 +138,63 @@
             position: relative;
             transition: transform 0.3s;
         }
-    
-        &::after{
+
+        &::after {
             top: -5px;
         }
-    
-        &::before{
+
+        &::before {
             top: 5px;
         }
     }
-    
-    .burgerActive{
-    
-        &::after{
+
+    .burgerActive {
+        &::after {
             transform: rotate(45deg);
             top: -1px;
         }
-    
-        &::before{
+
+        &::before {
             transform: rotate(-45deg);
             top: 0px;
         }
-        
     }
 }
 
+/* --- RESPONSIVE STYLES --- */
+
+@media (max-width: 1024px) {
+    .header {
+        .nav {
+            display: none !important; /* Hide inline links on tablet/mobile */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px; /* Comfortable padding for mobile */
+        
+        .logo {
+             /* Ensure logo text size is readable but not huge */
+             font-size: 1rem;
+        }
+    }
+
+    .headerButtonContainer {
+        /* Position the button nicely on mobile */
+        right: 10px; 
+        top: 10px;
+        
+        .button {
+            margin: 0; /* Reset margin to use top/right positioning */
+            width: 60px;
+            height: 60px;
+        }
+
+        .burger::after,
+        .burger::before {
+            width: 40%; /* Keep burger icon proportional */
+        }
+    }
+}

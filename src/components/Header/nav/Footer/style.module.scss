@@ -1,13 +1,25 @@
-.footer{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    font-size: 12px;
-    gap: 60px;
-    
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 12px;
+  gap: 60px;
+  padding: 20px 0;
 
-a{
+  a {
     text-decoration: none;
     color: white;
-}
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+  }
 }

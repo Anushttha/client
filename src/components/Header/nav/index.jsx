@@ -2,25 +2,17 @@ import React, { useState } from 'react'
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { menuSlide } from '../animation';
+import { menuSlide } from '../animation'; // Ensure this path is correct
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
 import Ap from '@/components/Ap';
 
-
-
-
-
 const navItems = [
-
   {
-  
     title: "Home",
     href: "/",
-    
   },
- 
   {
     title: "Work",
     href: "https://www.instagram.com/it.z_anushttha/",
@@ -33,7 +25,6 @@ const navItems = [
     title: "Contact",
     href: "/contact",
   },
-  
 ]
 
 export default function index() {
@@ -67,9 +58,13 @@ export default function index() {
             </div>
             <Footer />
         </div>
-        <Curve />
+        
+        {/* Wrapped Curve to control visibility on mobile */}
+        <div className={styles.curveWrapper}>
+            <Curve />
+        </div>
+        
         <Ap/>
     </motion.div>
-    
   )
 }

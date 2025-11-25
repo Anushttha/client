@@ -1,46 +1,153 @@
-.slidingImages{
+.slidingImages {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  position: relative;
+  margin-top: 200px;
+  background-color: white;
+  z-index: 1;
+
+  .slider {
     display: flex;
-    flex-direction: column;
-    gap: 3vw;
     position: relative;
-    margin-top: 200px;
-    background-color: white;
-    z-index: 1;
-    .slider{
-        display: flex;
+    gap: 3vw;
+    width: 120vw;
+    left: -10vw;
+
+    .project {
+      width: 25%;
+      height: 20vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .imageContainer {
         position: relative;
-        gap: 3vw;
-        width: 120vw;
-        left: -10vw;
-        .project{
-            width: 25%;
-            height: 20vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .imageContainer{
-                position: relative;
-                width: 80%;
-                height: 80%;
-                img{
-                    object-fit: cover;
-                }
-            }
+        width: 80%;
+        height: 80%;
+
+        img {
+          object-fit: cover;
         }
+      }
     }
-    .circleContainer{
-        background-color: red;
-        position: relative;
-        margin-top: 100px;
-        .circle{
-            height: 1550%;
-            width: 120%;
-            left: -10%;
-            border-radius: 0 0 50% 50%;
-            background-color: white;
-            z-index: 1;
-            position: absolute;
-            box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+  }
+
+  .circleContainer {
+    background-color: red;
+    position: relative;
+    margin-top: 100px;
+
+    .circle {
+      height: 1550%;
+      width: 120%;
+      left: -10%;
+      border-radius: 0 0 50% 50%;
+      background-color: white;
+      z-index: 1;
+      position: absolute;
+      box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+    }
+  }
+}
+
+/* -------- Responsive Breakpoints -------- */
+
+/* Large tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .slidingImages {
+    margin-top: 150px;
+
+    .slider {
+      gap: 2.5vw;
+      width: 130vw;
+      left: -15vw;
+
+      .project {
+        width: 30%;
+        height: 25vw;
+
+        .imageContainer {
+          width: 85%;
+          height: 85%;
         }
+      }
     }
+
+    .circleContainer {
+      margin-top: 80px;
+
+      .circle {
+        height: 1400%;
+        width: 130%;
+        left: -15%;
+      }
+    }
+  }
+}
+
+/* Tablets and large mobiles */
+@media (max-width: 768px) {
+  .slidingImages {
+    margin-top: 120px;
+
+    .slider {
+      gap: 2vw;
+      width: 150vw;
+      left: -20vw;
+
+      .project {
+        width: 40%;
+        height: 30vw;
+
+        .imageContainer {
+          width: 90%;
+          height: 90%;
+        }
+      }
+    }
+
+    .circleContainer {
+      margin-top: 60px;
+
+      .circle {
+        height: 1200%;
+        width: 140%;
+        left: -20%;
+      }
+    }
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .slidingImages {
+    margin-top: 100px;
+
+    .slider {
+      gap: 1.5vw;
+      width: 180vw;
+      left: -30vw;
+
+      .project {
+        width: 60%;
+        height: 40vw;
+
+        .imageContainer {
+          width: 95%;
+          height: 95%;
+        }
+      }
+    }
+
+    .circleContainer {
+      margin-top: 50px;
+
+      .circle {
+        height: 1000%;
+        width: 160%;
+        left: -30%;
+      }
+    }
+  }
 }

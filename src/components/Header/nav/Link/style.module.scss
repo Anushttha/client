@@ -1,14 +1,48 @@
-.link{
-    position: relative;
-    display: flex;
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px; // add some spacing between indicator and text
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
     align-items: center;
-    
-    .indicator{
-        width: 10px;
-        height: 10px;
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        left: -30px;
+
+    .indicator {
+      width: 8px;
+      height: 8px;
+      left: -20px;
     }
+
+    a {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    a {
+      font-size: 16px;
+    }
+
+    .indicator {
+      width: 6px;
+      height: 6px;
+      left: -16px;
+    }
+  }
 }

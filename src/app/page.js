@@ -8,7 +8,7 @@ import Projects from '../components/Projects';
 import Description from '../components/Description';
 import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
-import useMousePosition from './utils/useMousePosition';
+// import useMousePosition from './utils/useMousePosition';
 
 import { motion } from 'framer-motion';
 
@@ -16,25 +16,25 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
 
-  
+
 
   const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-  const { x, y } = useMousePosition();
+  //   const { x, y } = useMousePosition();
 
   const size = isHovered ? 400 : 40;
 
-  useEffect( () => {
+  useEffect(() => {
     (
       async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
 
-          setTimeout( () => {
-            setIsLoading(false);
-            document.body.style.cursor = 'default'
-            window.scrollTo(0,0);
-          }, 2000)
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.cursor = 'default'
+          window.scrollTo(0, 0);
+        }, 2000)
       }
     )()
   }, [])
@@ -52,7 +52,7 @@ export default function Home() {
       <SlidingImages />
       <Contact />
 
-      <motion.div 
+      {/* <motion.div 
 
         className={styles.mask}
 
@@ -82,12 +82,11 @@ export default function Home() {
 
         <p>I'm a <span>selectively skilled</span> product designer with strong focus on producing high quality & impactful digital experience.</p>
 
-      </div>
-      
+      </div> */}
+
     </main>
   )
 }
-
 
 
 
